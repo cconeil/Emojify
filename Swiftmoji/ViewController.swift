@@ -10,56 +10,65 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let tf = UITextField(frame: CGRect(x: 100.0, y: 200.0, width: 210.0, height: 100.0))
+    private(set) lazy var textFieldLabel: UILabel = {
+        let label = UILabel()
+        label.text = NSLocalizedString("Text Field", comment: "")
+        return label
+    }()
 
-    let tv = UITextView(frame: CGRect(x: 0, y: 0, width: 320, height: 50))
+    private(set) lazy var textField: UITextField = {
+        let textField = UITextField(frame: CGRect.zero)
+        textField.font = UIFont.systemFontOfSize(20.0)
+        textField.startEmojifying()
+        return textField
+    }()
+
+    private(set) lazy var textViewLabel: UILabel = {
+        let label = UILabel()
+        label.text = NSLocalizedString("Text View", comment: "")
+        return label
+    }()
+
+    private(set) lazy var textView: UITextView = {
+        let textView = UITextView(frame: CGRect.zero)
+        textView.font = UIFont.systemFontOfSize(20.0)
+        textView.startEmojifying()
+        return textView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
 
+        view.addSubview(textFieldLabel)
+        view.addSubview(textField)
+        textField.layer.borderWidth = 1.0
+        textField.layer.borderColor = UIColor.greenColor().CGColor
 
-//        let label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 300.0, height: 100.0))
-//        label.numberOfLines = 0
-//        label.lineBreakMode = .ByWordWrapping
-//        label.text = "I am happy for beer because food is tasty shrimp."
-//
-//        let label2 = UILabel(frame: CGRect(x: 10.0, y: 150.0, width: 300.0, height: 100.0))
-//        label2.attributedText = NSAttributedString(string: "Hello this is an attrbuted string with a great big grin and house in the sky.")
-//        label2.numberOfLines = 0
-//        label2.lineBreakMode = .ByWordWrapping
+        view.addSubview(textViewLabel)
+        view.addSubview(textView)
+        textView.layer.borderWidth = 1.0
+        textView.layer.borderColor = UIColor.redColor().CGColor
+    }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
 
-        tf.backgroundColor = UIColor.greenColor()
-        tf.startEmojifying()
+        let width = view.frame.size.width
+        textFieldLabel.frame = CGRect(x: width, y: 50.0, width: width, height: 50.0)
+        textField.frame = CGRect(x: 0.0, y: 100.0, width: width, height: 50.0)
 
-        tv.startEmojifying()
-        tv.backgroundColor = UIColor.lightTextColor()
-
-        tv.text = "hello"
-
-        view.addSubview(tf)
-        view.addSubview(tv)
-
-//        dispatch_after(dispatch_time_t(3000.0), dispatch_get_main_queue()) { () -> Void in
-//            label.emojify()
-//            label2.emojify()
-//        }
-
-
+        textViewLabel.frame = CGRect(x: 0.0, y: 200.0, width: width, height: 50.0)
+        textView.frame = CGRect(
+            x: 0.0,
+            y: 250.0,
+            width: width,
+            height: view.frame.size.height - 100.0
+        )
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-
-        tf.becomeFirstResponder()
+        textField.becomeFirstResponder()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
