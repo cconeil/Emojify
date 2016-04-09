@@ -28,7 +28,8 @@ extension String : Emojified {
         }
 
         for word in words() {
-            if let emoji = emojis.randomEmoji(key: word), range = rangeOfString(word) {
+            let key = word.lowercaseString
+            if let emoji = emojis.randomEmoji(key: key), range = rangeOfString(word) {
                 replaceRange(range, with: emoji)
             }
         }
@@ -46,9 +47,10 @@ extension NSMutableAttributedString : Emojified {
         }
 
         for word in string.words() {
+            let key = word.lowercaseString
             let nsstring = string as NSString
             let range = nsstring.rangeOfString(word)
-            if let emoji = emojis.randomEmoji(key: word) where range.location != NSNotFound {
+            if let emoji = emojis.randomEmoji(key: key) where range.location != NSNotFound {
                 let attributes = attributesAtIndex(range.location, effectiveRange: nil)
                 replaceCharactersInRange(range, withAttributedString: NSAttributedString(string: emoji, attributes: attributes))
             }
