@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.summary  = 'Emojify your app, emojify your life.'
   s.license  = 'MIT'
   s.source   = { :git => 'https://github.com/cconeil/Emojify.git', :tag => s.version.to_s }
-  s.source_files = 'Swiftmoji/*{.json,.swift}'
+  s.source_files = 'Emojify/*{.json,.swift}'
   s.platform = :ios
   s.ios.deployment_target = '8.0'
   s.requires_arc = true

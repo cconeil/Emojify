@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Swiftmoji.xcodeproj">
+      location = "self:/Users/christopher/Desktop/Swiftmoji/Emojify.xcodeproj">
    </FileRef>
 </Workspace>

@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9DA9AB101CB76B170069E15F /* Swiftmoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Swiftmoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DA9AB101CB76B170069E15F /* Emojify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Emojify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DA9AB131CB76B170069E15F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9DA9AB151CB76B170069E15F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9DA9AB181CB76B170069E15F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -48,7 +48,7 @@
 		9DA9AB071CB76B170069E15F = {
 			isa = PBXGroup;
 			children = (
-				9DA9AB121CB76B170069E15F /* Swiftmoji */,
+				9DA9AB121CB76B170069E15F /* Emojify */,
 				9DA9AB111CB76B170069E15F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,12 +56,12 @@
 		9DA9AB111CB76B170069E15F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9DA9AB101CB76B170069E15F /* Swiftmoji.app */,
+				9DA9AB101CB76B170069E15F /* Emojify.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9DA9AB121CB76B170069E15F /* Swiftmoji */ = {
+		9DA9AB121CB76B170069E15F /* Emojify */ = {
 			isa = PBXGroup;
 			children = (
 				9DA9AB271CB76D1C0069E15F /* emoji_words.json */,
@@ -76,15 +76,15 @@
 				9DA9AB1C1CB76B170069E15F /* LaunchScreen.storyboard */,
 				9DA9AB1F1CB76B170069E15F /* Info.plist */,
 			);
-			path = Swiftmoji;
+			path = Emojify;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9DA9AB0F1CB76B170069E15F /* Swiftmoji */ = {
+		9DA9AB0F1CB76B170069E15F /* Emojify */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9DA9AB221CB76B170069E15F /* Build configuration list for PBXNativeTarget "Swiftmoji" */;
+			buildConfigurationList = 9DA9AB221CB76B170069E15F /* Build configuration list for PBXNativeTarget "Emojify" */;
 			buildPhases = (
 				9DA9AB0C1CB76B170069E15F /* Sources */,
 				9DA9AB0D1CB76B170069E15F /* Frameworks */,
@@ -94,9 +94,9 @@
 			);
 			dependencies = (
 			);
-			name = Swiftmoji;
-			productName = Swiftmoji;
-			productReference = 9DA9AB101CB76B170069E15F /* Swiftmoji.app */;
+			name = Emojify;
+			productName = Emojify;
+			productReference = 9DA9AB101CB76B170069E15F /* Emojify.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -114,7 +114,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9DA9AB0B1CB76B170069E15F /* Build configuration list for PBXProject "Swiftmoji" */;
+			buildConfigurationList = 9DA9AB0B1CB76B170069E15F /* Build configuration list for PBXProject "Emojify" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -127,7 +127,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9DA9AB0F1CB76B170069E15F /* Swiftmoji */,
+				9DA9AB0F1CB76B170069E15F /* Emojify */,
 			);
 		};
 /* End PBXProject section */
@@ -267,10 +267,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Swiftmoji/Info.plist;
+				INFOPLIST_FILE = Emojify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = because.Swiftmoji;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = because.Emojify;
+				PRODUCT_NAME = Emojify;
 			};
 			name = Debug;
 		};
@@ -278,17 +278,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Swiftmoji/Info.plist;
+				INFOPLIST_FILE = Emojify/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = because.Swiftmoji;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = because.Emojify;
+				PRODUCT_NAME = Emojify;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9DA9AB0B1CB76B170069E15F /* Build configuration list for PBXProject "Swiftmoji" */ = {
+		9DA9AB0B1CB76B170069E15F /* Build configuration list for PBXProject "Emojify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9DA9AB201CB76B170069E15F /* Debug */,
@@ -297,7 +297,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9DA9AB221CB76B170069E15F /* Build configuration list for PBXNativeTarget "Swiftmoji" */ = {
+		9DA9AB221CB76B170069E15F /* Build configuration list for PBXNativeTarget "Emojify" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9DA9AB231CB76B170069E15F /* Debug */,
