@@ -14,7 +14,6 @@
 		9DA9AB1E1CB76B170069E15F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DA9AB1C1CB76B170069E15F /* LaunchScreen.storyboard */; };
 		9DA9AB261CB76B280069E15F /* Emojis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA9AB251CB76B280069E15F /* Emojis.swift */; };
 		9DA9AB291CB76D1C0069E15F /* emoji_words.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DA9AB271CB76D1C0069E15F /* emoji_words.json */; };
-		9DA9AB2A1CB76D1C0069E15F /* emoji_map.json in Resources */ = {isa = PBXBuildFile; fileRef = 9DA9AB281CB76D1C0069E15F /* emoji_map.json */; };
 		9DA9AB2C1CB77CBB0069E15F /* Emojified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA9AB2B1CB77CBB0069E15F /* Emojified.swift */; };
 		9DA9AB2E1CB782000069E15F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA9AB2D1CB782000069E15F /* Extensions.swift */; };
 		9DA9AB301CB796C50069E15F /* AutoEmojified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA9AB2F1CB796C50069E15F /* AutoEmojified.swift */; };
@@ -30,7 +29,6 @@
 		9DA9AB1F1CB76B170069E15F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DA9AB251CB76B280069E15F /* Emojis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emojis.swift; sourceTree = "<group>"; };
 		9DA9AB271CB76D1C0069E15F /* emoji_words.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emoji_words.json; sourceTree = "<group>"; };
-		9DA9AB281CB76D1C0069E15F /* emoji_map.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emoji_map.json; sourceTree = "<group>"; };
 		9DA9AB2B1CB77CBB0069E15F /* Emojified.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emojified.swift; sourceTree = "<group>"; };
 		9DA9AB2D1CB782000069E15F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9DA9AB2F1CB796C50069E15F /* AutoEmojified.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEmojified.swift; sourceTree = "<group>"; };
@@ -67,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				9DA9AB271CB76D1C0069E15F /* emoji_words.json */,
-				9DA9AB281CB76D1C0069E15F /* emoji_map.json */,
 				9DA9AB131CB76B170069E15F /* AppDelegate.swift */,
 				9DA9AB151CB76B170069E15F /* ViewController.swift */,
 				9DA9AB251CB76B280069E15F /* Emojis.swift */,
@@ -140,7 +137,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DA9AB2A1CB76D1C0069E15F /* emoji_map.json in Resources */,
 				9DA9AB1E1CB76B170069E15F /* LaunchScreen.storyboard in Resources */,
 				9DA9AB1B1CB76B170069E15F /* Assets.xcassets in Resources */,
 				9DA9AB291CB76D1C0069E15F /* emoji_words.json in Resources */,
@@ -308,6 +304,7 @@
 				9DA9AB241CB76B170069E15F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
