@@ -23,6 +23,10 @@ extension String : Emojified {
     }
 
     mutating func emojify(emojis emojis: Emojis) {
+        guard endsInWord() else {
+            return
+        }
+
         for word in words() {
             if let emoji = emojis.randomEmoji(key: word), range = rangeOfString(word) {
                 replaceRange(range, with: emoji)
@@ -37,6 +41,10 @@ extension NSMutableAttributedString : Emojified {
     }
 
     func emojify(emojis emojis: Emojis) {
+        guard string.endsInWord() else {
+            return
+        }
+
         for word in string.words() {
             let nsstring = string as NSString
             let range = nsstring.rangeOfString(word)

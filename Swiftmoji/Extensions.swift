@@ -13,11 +13,19 @@ extension String {
         return componentsSeparatedByCharactersInSet(.punctuationCharacterSet()).joinWithSeparator("").componentsSeparatedByString(" ").filter{!$0.isEmpty}
     }
 
-    // TODO: Add function to check if the string ends in a word so we can go back and change the text.
+    func endsInWord() -> Bool {
+        if let lastCharacter = self.characters.last {
+            let character = String(lastCharacter)
 
-//    func endsInWord() -> Bool {
-//        return true
-//    }
+            if character.rangeOfCharacterFromSet(NSCharacterSet.punctuationCharacterSet()) != nil {
+                return true
+            }
+            if character.rangeOfCharacterFromSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) != nil {
+                return true
+            }
+        }
+        return false
+    }
 }
 
 extension Array {
