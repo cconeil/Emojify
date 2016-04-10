@@ -27,7 +27,7 @@ extension UITextField: AutoEmojified {
             assert(false, "You should only call startEmojifying() once.")
             return
         }
-        addTarget(self, action: "bc_valueChanged:", forControlEvents: .EditingChanged)
+        addTarget(self, action: #selector(UITextField.bc_valueChanged(_:)), forControlEvents: .EditingChanged)
     }
 
     func stopEmojifying() {
@@ -35,7 +35,7 @@ extension UITextField: AutoEmojified {
             assert(false, "You should only call stopEmojifying() while the object is emojifying.")
             return
         }
-        removeTarget(self, action: "bc_valueChanged:", forControlEvents: .EditingChanged )
+        removeTarget(self, action: #selector(UITextField.bc_valueChanged(_:)), forControlEvents: .EditingChanged )
     }
 
     @objc private func bc_valueChanged(sender: UITextField) {
@@ -53,7 +53,7 @@ extension UITextField: AutoEmojified {
 extension UITextView: AutoEmojified {
     func startEmojifying() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UITextViewTextDidChangeNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "bc_textChanged:", name: UITextViewTextDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UITextView.bc_textChanged(_:)), name: UITextViewTextDidChangeNotification, object: nil)
     }
 
     func stopEmojifying() {

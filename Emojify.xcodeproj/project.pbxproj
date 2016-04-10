@@ -17,6 +17,7 @@
 		9DA9AB2C1CB77CBB0069E15F /* Emojified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA9AB2B1CB77CBB0069E15F /* Emojified.swift */; };
 		9DA9AB2E1CB782000069E15F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA9AB2D1CB782000069E15F /* Extensions.swift */; };
 		9DA9AB301CB796C50069E15F /* AutoEmojified.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA9AB2F1CB796C50069E15F /* AutoEmojified.swift */; };
+		9DDA706A1CB9C2AA00B0086E /* Typeahead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDA70691CB9C2AA00B0086E /* Typeahead.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9DA9AB2B1CB77CBB0069E15F /* Emojified.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Emojified.swift; sourceTree = "<group>"; };
 		9DA9AB2D1CB782000069E15F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9DA9AB2F1CB796C50069E15F /* AutoEmojified.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoEmojified.swift; sourceTree = "<group>"; };
+		9DDA70691CB9C2AA00B0086E /* Typeahead.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typeahead.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				9DA9AB131CB76B170069E15F /* AppDelegate.swift */,
 				9DA9AB151CB76B170069E15F /* ViewController.swift */,
 				9DA9AB251CB76B280069E15F /* Emojis.swift */,
+				9DDA70691CB9C2AA00B0086E /* Typeahead.swift */,
 				9DA9AB2D1CB782000069E15F /* Extensions.swift */,
 				9DA9AB2B1CB77CBB0069E15F /* Emojified.swift */,
 				9DA9AB2F1CB796C50069E15F /* AutoEmojified.swift */,
@@ -154,6 +157,7 @@
 				9DA9AB2E1CB782000069E15F /* Extensions.swift in Sources */,
 				9DA9AB261CB76B280069E15F /* Emojis.swift in Sources */,
 				9DA9AB161CB76B170069E15F /* ViewController.swift in Sources */,
+				9DDA706A1CB9C2AA00B0086E /* Typeahead.swift in Sources */,
 				9DA9AB2C1CB77CBB0069E15F /* Emojified.swift in Sources */,
 				9DA9AB141CB76B170069E15F /* AppDelegate.swift in Sources */,
 				9DA9AB301CB796C50069E15F /* AutoEmojified.swift in Sources */,

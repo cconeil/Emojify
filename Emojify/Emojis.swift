@@ -12,23 +12,21 @@ public final class Emojis {
     enum Source {
         case Custom, Category, Keyword
 
-        func emojiMap() -> EmojiMapType {
+        func emojiMap() -> Typeahead {
             switch self {
             case .Category:
                 return Emojis.loadCategoryMap()
             case .Keyword:
                 return Emojis.loadKeywordMap()
             default:
-                return [:]
+                return Typeahead()
             }
         }
     }
 
     typealias EmojiType = String
 
-    typealias EmojiMapType = [String : [EmojiType]]
-
-    private var emojiMap: EmojiMapType
+    private var emojiMap: Typeahead
 
     init(source: Source) {
         emojiMap = source.emojiMap()
@@ -39,54 +37,51 @@ public final class Emojis {
     }
 
     func add(emoji emoji: EmojiType, forKey key: String) {
-        var emojis = emojiMap[key] ?? []
-        emojis.append(emoji)
-        emojiMap[key] = emojis
+        emojiMap.add(word: emoji, forKey: key)
     }
 
     func remove(emoji emoji: EmojiType, forKey key: String) {
-        if var emojis = emojiMap[key], let index = emojis.indexOf(emoji) {
-            emojis.removeAtIndex(index)
-        }
+        emojiMap.remove(word: emoji, forKey: key)
     }
 
-    func emojis(key key: String) -> [EmojiType]? {
-        return emojiMap[key]
+    func emojis(key key: String) -> [EmojiType] {
+        return emojiMap.words(matching: key)
     }
 
     func randomEmoji(key key: String) -> EmojiType? {
-       return emojis(key: key)?.randomItem()
+        let choices = emojis(key: key)
+        if Bool(choices.count) {
+            return choices.randomItem()
+        } else {
+            return nil
+        }
     }
 }
 
 extension Emojis {
-    static func loadCategoryMap() -> EmojiMapType {
-        var categoryMap: EmojiMapType = [:]
+    static func loadCategoryMap() -> Typeahead {
+        let categoryMap = Typeahead()
         let rawEmojis = loadRawEmojis()
 
         for (_, value) in rawEmojis {
             if let value = value as? NSDictionary {
                 if let emoji = value["char"] as? String, category = value["category"] as? String {
-                    var emojis = categoryMap[category] ?? []
-                    emojis.append(emoji)
-                    categoryMap[category] = emojis
+                    categoryMap.add(word: emoji, forKey: category)
                 }
             }
         }
         return categoryMap
     }
 
-    static func loadKeywordMap() -> EmojiMapType {
-        var keywordMap: EmojiMapType = [:]
+    static func loadKeywordMap() -> Typeahead {
+        let keywordMap = Typeahead()
         let rawEmojis = loadRawEmojis()
 
         for (_, value) in rawEmojis {
             if let value = value as? NSDictionary {
                 if let emoji = value["char"] as? String, keywords = value["keywords"] as? [String] {
                     for keyword in keywords {
-                        var emojis = keywordMap[keyword] ?? []
-                        emojis.append(emoji)
-                        keywordMap[keyword] = emojis
+                        keywordMap.add(word: emoji, forKey: keyword)
                     }
                 }
             }
