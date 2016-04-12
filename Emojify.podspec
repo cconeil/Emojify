@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'Emojify'
-  s.version  = '0.1.0'
+  s.version  = '0.1.1'
   s.author   = { 'Chris O\'Neil' => 'cconeil5@gmail.com' }
   s.homepage = 'https://github.com/cconeil/Emojify'
   s.summary  = 'Emojify your app, emojify your life.'
