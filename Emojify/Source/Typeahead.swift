@@ -50,7 +50,18 @@ public final class Typeahead {
     }
 
     func remove(word word: String, forKey key: String) {
-        // TODO:
+        var store = self.store
+        for character in key.characters {
+            let storeKey = String(character)
+            guard let substore = store[storeKey] else {
+                return
+            }
+            store = substore as! StoreType
+        }
+
+        if let words = store[Constants.WordsKey] as? NSMutableArray {
+            words.removeObject(word)
+        }
     }
 
     func removeAll() {
