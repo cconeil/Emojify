@@ -90,7 +90,7 @@ extension Emojis {
     }
 
     private static func loadRawEmojis() -> NSDictionary {
-        guard let path = NSBundle.mainBundle().pathForResource("emoji_words", ofType: "json") else {
+        guard let path = NSBundle(forClass: self).pathForResource("emoji_words", ofType: "json") else {
             return NSDictionary()
         }
 
