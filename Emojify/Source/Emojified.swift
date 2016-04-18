@@ -12,17 +12,17 @@ import UIKit
 
 let keywordEmojis = Emojis(source: .Keyword)
 
-protocol Emojified {
+public protocol Emojified {
     mutating func emojify()
     mutating func emojify(emojis emojis: Emojis)
 }
 
 extension String : Emojified {
-    mutating func emojify() {
+    public mutating func emojify() {
         emojify(emojis: keywordEmojis)
     }
 
-    mutating func emojify(emojis emojis: Emojis) {
+    public mutating func emojify(emojis emojis: Emojis) {
         guard endsInWord() else {
             return
         }
@@ -37,11 +37,11 @@ extension String : Emojified {
 }
 
 extension NSMutableAttributedString : Emojified {
-    func emojify() {
+    public func emojify() {
         emojify(emojis: keywordEmojis)
     }
 
-    func emojify(emojis emojis: Emojis) {
+    public func emojify(emojis emojis: Emojis) {
         guard string.endsInWord() else {
             return
         }

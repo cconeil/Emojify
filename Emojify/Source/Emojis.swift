@@ -9,7 +9,7 @@
 import Foundation
 
 public final class Emojis {
-    enum Source {
+    public enum Source {
         case Custom, Category, Keyword
 
         func emojiMap() -> Typeahead {
@@ -24,31 +24,31 @@ public final class Emojis {
         }
     }
 
-    typealias EmojiType = String
+    public typealias EmojiType = String
 
     private var emojiMap: Typeahead
 
-    init(source: Source) {
+    public init(source: Source) {
         emojiMap = source.emojiMap()
     }
 
-    convenience init() {
+    public convenience init() {
         self.init(source: .Custom)
     }
 
-    func add(emoji emoji: EmojiType, forKey key: String) {
+    public func add(emoji emoji: EmojiType, forKey key: String) {
         emojiMap.add(word: emoji, forKey: key)
     }
 
-    func remove(emoji emoji: EmojiType, forKey key: String) {
+    public func remove(emoji emoji: EmojiType, forKey key: String) {
         emojiMap.remove(word: emoji, forKey: key)
     }
 
-    func emojis(key key: String) -> [EmojiType] {
+    public func emojis(key key: String) -> [EmojiType] {
         return emojiMap.words(matching: key)
     }
 
-    func randomEmoji(key key: String) -> EmojiType? {
+    public func randomEmoji(key key: String) -> EmojiType? {
         let choices = emojis(key: key)
         if Bool(choices.count) {
             return choices.randomItem()

@@ -9,20 +9,20 @@
 import Foundation
 import UIKit
 
-protocol AutoEmojified {
+public protocol AutoEmojified {
     var emojis: Emojis { get }
     func startEmojifying()
     func stopEmojifying()
 }
 
 extension AutoEmojified {
-    var emojis: Emojis {
+    public var emojis: Emojis {
         return keywordEmojis
     }
 }
 
 extension UITextField: AutoEmojified {
-    func startEmojifying() {
+    public func startEmojifying() {
         guard actionsForTarget(self, forControlEvent: .EditingChanged)?.contains("bc_valueChanged:") != true else {
             assert(false, "You should only call startEmojifying() once.")
             return
@@ -30,7 +30,7 @@ extension UITextField: AutoEmojified {
         addTarget(self, action: #selector(UITextField.bc_valueChanged(_:)), forControlEvents: .EditingChanged)
     }
 
-    func stopEmojifying() {
+    public func stopEmojifying() {
         guard actionsForTarget(self, forControlEvent: .EditingChanged)?.contains("bc_valueChanged:") == true else {
             assert(false, "You should only call stopEmojifying() while the object is emojifying.")
             return
@@ -51,12 +51,12 @@ extension UITextField: AutoEmojified {
 }
 
 extension UITextView: AutoEmojified {
-    func startEmojifying() {
+    public func startEmojifying() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UITextViewTextDidChangeNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UITextView.bc_textChanged(_:)), name: UITextViewTextDidChangeNotification, object: nil)
     }
 
-    func stopEmojifying() {
+    public func stopEmojifying() {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UITextViewTextDidChangeNotification, object: nil)
     }
 

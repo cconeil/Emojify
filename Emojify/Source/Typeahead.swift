@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class Typeahead {
+final class Typeahead {
 
     private struct Constants {
         private static let WordsKey = "words"
